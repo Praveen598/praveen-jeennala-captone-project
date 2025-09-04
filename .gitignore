@@ -1,0 +1,48 @@
+# -----------------------
+# Angular (frontend)
+# -----------------------
+/frontend/node_modules/
+/frontend/dist/
+/frontend/.angular/
+/frontend/.env
+/frontend/.idea/
+/frontend/.vscode/
+/frontend/package-lock.json
+
+# Angular build artifacts
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# -----------------------
+# Java (Spring Boot backend)
+# -----------------------
+/backend/target/
+/backend/.classpath
+/backend/.project
+/backend/.settings/
+/backend/.idea/
+/backend/.vscode/
+/backend/logs/
+/backend/tmp/
+/backend/.env
+
+# Maven wrapper
+/backend/.mvn/
+backend/mvnw
+backend/mvnw.cmd
+
+# -----------------------
+# OS & Editor specific
+# -----------------------
+.DS_Store
+Thumbs.db
+*.iml
+
+# -----------------------
+# Common environment files
+# -----------------------
+.env
+*.properties
+*.yml
