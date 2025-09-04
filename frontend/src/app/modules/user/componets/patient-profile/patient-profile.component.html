@@ -1,0 +1,67 @@
+<app-home-component></app-home-component>
+
+<div class="profile-container" *ngIf="patient; else loadingOrError">
+  <!-- Profile Header -->
+  <div class="profile-card">
+    <div class="profile-banner"></div>
+    <div class="profile-avatar">
+      <span>{{ patient?.name }}</span>
+    </div>
+    <div class="profile-info">
+      <h2>{{ patient?.name }}</h2>
+      <p class="email">{{ patient?.email }}</p>
+      <span class="badge">{{ patient?.gender }}</span>
+    </div>
+
+    <!-- Patient Details Grid -->
+    <div class="details-grid">
+      <div class="detail-item">
+        <span class="label">Patient ID</span>
+        <span class="value">{{ patient?.id }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Address</span>
+        <span class="value">{{ patient?.address }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Date of Birth</span>
+        <span class="value">{{ patient?.dob | date:'longDate' }}</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Weight</span>
+        <span class="value">{{ patient?.weight }} kg</span>
+      </div>
+      <div class="detail-item">
+        <span class="label">Height</span>
+        <span class="value">{{ patient?.height }} cm</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Medical Records Section -->
+  <div class="records-section">
+    <h3>📋 Medical Records</h3>
+    <div *ngIf="medicalRecord.length > 0; else noRecords" class="records-grid">
+      <div class="record-card" *ngFor="let record of medicalRecord">
+        <h4>#{{ record?.id }}</h4>
+        <p><strong>Description:</strong> {{ record?.description }}</p>
+        <p><strong>Doctor:</strong> {{ record?.doctorName }}</p>
+        <p><strong>Visited:</strong> {{ record?.visitedDate | date:'mediumDate' }}</p>
+        <p><strong>Medicines:</strong> {{ record?.medicines }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- No Records Template -->
+<ng-template #noRecords>
+  <p class="no-records">⚠️ No medical records found for this patient.</p>
+</ng-template>
+
+<!-- Loading or Error -->
+<ng-template #loadingOrError>
+  <div class="loading">⏳ Loading patient details...</div>
+  <div *ngIf="error" class="error">{{ error }}</div>
+</ng-template>
+
+<app-footer></app-footer>

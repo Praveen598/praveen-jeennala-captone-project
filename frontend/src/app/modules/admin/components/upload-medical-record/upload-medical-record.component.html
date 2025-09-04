@@ -1,0 +1,75 @@
+
+<div class="patient-container">
+  <h2>Patient Details</h2>
+  <div class="patient-card" *ngIf="patient">
+    <p><strong>ID:</strong> {{ patient.id }}</p>
+    <p><strong>Name:</strong> {{ patient.name }}</p>
+    <p><strong>Email:</strong> {{ patient.email }}</p>
+    <p><strong>Age:</strong> {{ patient.age }}</p>
+  </div>
+
+  <!-- Upload Medical Record Form -->
+  <div class="upload-section">
+    <h3>Add Medical Record</h3>
+    <form [formGroup]="recordForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="full-width">
+        <mat-label>Description</mat-label>
+        <input matInput formControlName="description" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Doctor Name</mat-label>
+        <input matInput formControlName="doctorName" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Visited Date</mat-label>
+        <input matInput type="date" formControlName="visitedDate" />
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <mat-label>Medicines</mat-label>
+        <textarea matInput formControlName="medicines"></textarea>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">
+        Upload Record
+      </button>
+    </form>
+  </div>
+
+  <!-- Show List of Uploaded Medical Records -->
+  <div class="records-section" *ngIf="medicalRecords.length > 0">
+    <h3>Medical Records</h3>
+    <table mat-table [dataSource]="medicalRecords" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let record">{{ record.id }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef>Description</th>
+        <td mat-cell *matCellDef="let record">{{ record.description }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="doctorName">
+        <th mat-header-cell *matHeaderCellDef>Doctor</th>
+        <td mat-cell *matCellDef="let record">{{ record.doctorName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="visitedDate">
+        <th mat-header-cell *matHeaderCellDef>Visited Date</th>
+        <td mat-cell *matCellDef="let record">{{ record.visitedDate | date }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="medicines">
+        <th mat-header-cell *matHeaderCellDef>Medicines</th>
+        <td mat-cell *matCellDef="let record">{{ record.medicines }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>
+

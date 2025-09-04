@@ -1,0 +1,23 @@
+<app-home-component></app-home-component>
+
+<div class="billing-container">
+  <h1>Billing</h1>
+
+  <div class="bills-section">
+    <mat-card *ngFor="let bill of bills" class="bill-card">
+      <mat-card-title>{{ bill.patientName }}</mat-card-title>
+      <mat-card-content>
+        <p>Amount: ₹2500</p>
+        <p>Due Date: 31/7/2025</p>
+        <p>Status: <span [ngClass]="bill.status === 'paid' ? 'paid' : 'unpaid'">{{ bill.status }}</span></p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" 
+                (click)="payBill(bill)" 
+                [disabled]="bill.status === 'paid'">Pay</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
+
+<app-footer></app-footer>

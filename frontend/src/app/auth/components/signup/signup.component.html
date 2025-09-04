@@ -1,0 +1,72 @@
+<app-home-component></app-home-component>
+
+<div class="signup-wrapper">
+  <!-- Left Side - Image -->
+  <div class="signup-image">
+    <img 
+    src="https://media.istockphoto.com/id/1225743855/vector/doctor-visiting-patient-and-explains-the-diagnosis-of-the-disease-in-cartoon-flat.jpg?s=612x612&w=0&k=20&c=jM_jBr0NMUmqi-80QMOPrgjGxUb4ow-eo0Xjmnzq8PU="
+      alt="Hospital Customers" 
+    />
+  </div>
+
+  <!-- Right Side - Signup Form -->
+  <div class="signup-container">
+    <mat-card class="signup-card">
+      <mat-card-title class="signup-title">Create Account</mat-card-title>
+      <mat-card-subtitle class="signup-subtitle">Sign up to access Hospital Application</mat-card-subtitle>
+
+      <mat-card-content>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+          <!-- Name -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Enter your name" formControlName="name" required />
+            <mat-error *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched">
+              Name must be 5–50 characters and only letters
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Email -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" placeholder="Enter your email" formControlName="email" required />
+            <mat-error *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+              Please enter a valid email
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Password -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password" required />
+            <button mat-icon-button matSuffix type="button" (click)="togglePasswordVisibility()">
+              <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <mat-error *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+              Password must be 8–20 chars, include uppercase, lowercase, number & special char
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Confirm Password -->
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Confirm Password</mat-label>
+            <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="confirmPassword" required />
+            <button mat-icon-button matSuffix type="button" (click)="togglePasswordVisibility()">
+              <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <mat-error *ngIf="passwordMismatchError">
+              Passwords do not match
+            </mat-error>
+          </mat-form-field>
+
+          <!-- Signup Button -->
+          <button type="submit" mat-flat-button class="signup-btn" [disabled]="signupForm.invalid">
+            Signup
+          </button>
+
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

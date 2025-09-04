@@ -1,0 +1,19 @@
+.appointment-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.appointment-card {
+  width: 400px;
+  padding: 20px;
+}
+
+.full-width {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+button {
+  width: 100%;
+}

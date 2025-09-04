@@ -1,0 +1,94 @@
+/* Wrapper */
+.login-wrapper {
+  display: flex;
+  height: 100vh;
+  background: #f5faff; /* Light blue background */
+}
+
+/* Left Image */
+.login-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1976d2; /* Blue background */
+}
+
+.login-image img {
+  max-width: 80%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Right Form */
+.login-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+}
+
+/* Card */
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 32px;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+/* Title */
+.login-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1976d2;
+  margin-bottom: 8px;
+}
+
+.login-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+/* Full Width Inputs */
+.full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* Button */
+.login-btn {
+  width: 100%;
+  background-color: #1976d2 !important;
+  color: white !important;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.login-btn:disabled {
+  background-color: #90caf9 !important;
+}
+
+/* Links */
+.login-links {
+  margin-top: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-links a {
+  font-size: 14px;
+  color: #1976d2;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.login-links a:hover {
+  color: #0d47a1;
+}

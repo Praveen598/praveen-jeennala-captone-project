@@ -1,0 +1,23 @@
+.billing-container {
+  padding: 20px;
+}
+
+.bills-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.bill-card {
+  width: 250px;
+}
+
+.paid {
+  color: green;
+  font-weight: bold;
+}
+
+.unpaid {
+  color: red;
+  font-weight: bold;
+}

@@ -1,0 +1,51 @@
+<!-- Not logged in -->
+<div *ngIf="!isUserLoggedIn && !isAdminLoggedIn">
+  <mat-toolbar class="navbar">
+    <button mat-icon-button>
+      <mat-icon class="icon-white">menu</mat-icon>
+    </button>
+    <span class="app-title">Hospital Application</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/signup" class="nav-btn">Signup</button>
+    <button mat-button routerLink="/login" class="nav-btn">Login</button>
+  </mat-toolbar>
+ 
+</div>
+
+<!-- Logged in (User) -->
+<div *ngIf="isUserLoggedIn">
+  <mat-toolbar class="navbar">
+    
+    <span class="app-title">🏥 Hospital Application</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/user/dashboard" class="nav-btn">Home</button>
+    <button mat-button routerLink="/user/appointment" class="nav-btn">Appointment</button>
+    <button mat-button routerLink="/user/bills" class="nav-btn">Bills</button>
+    
+    
+    <button mat-button routerLink="/user/profile" class="nav-btn">Reports & Profile</button>
+    <button mat-button routerLink="/login" (click)="logout()" class="nav-btn logout-btn">
+      Logout
+    </button>
+  </mat-toolbar>
+</div>
+
+
+<!-- Logged in (admin) -->
+<div *ngIf="isAdminLoggedIn">
+  <mat-toolbar class="navbar">
+    <button mat-icon-button>
+      <mat-icon class="icon-white">menu</mat-icon>
+    </button>
+    <span class="app-title">Doctor dashboard</span>
+    <span class="spacer"></span>
+    <button mat-button routerLink="/user/admindashboard" class="nav-btn">Admin</button>
+    
+    <button mat-button routerLink="/login" (click)="logout()" class="nav-btn logout-btn">
+      Logout
+    </button>
+  </mat-toolbar>
+</div>
+
+<!-- Hero section (only visible if NOT on login/signup route and not logged in) -->
+

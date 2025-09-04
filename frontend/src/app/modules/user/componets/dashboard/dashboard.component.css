@@ -1,0 +1,143 @@
+.home-container {
+  padding: 2rem;
+
+  .hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+
+    .hero-text {
+      flex: 1;
+      h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+      p {
+        margin-bottom: 1.5rem;
+        color: #555;
+      }
+    }
+
+    .hero-image img {
+      max-width: 400px;
+    }
+  }
+
+  .biography-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem;
+
+    .bio-image img {
+      max-width: 400px;
+      margin-right: 2rem;
+    }
+
+    .bio-text {
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        margin-bottom: 1rem;
+        color: #555;
+      }
+    }
+  }
+
+  .services-section {
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .services-grid {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+
+      mat-card {
+        width: 250px;
+        text-align: center;
+
+        img {
+          height: 150px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+.services-section {
+  padding: 50px 20px;
+  background: #f8faff; /* Match your current background */
+}
+
+.services-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  padding: 20px;
+  text-align: center;
+}
+
+.service-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* doctors.component.css */
+.doctors-section {
+  text-align: center;
+  padding: 2rem;
+}
+
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+.doctor-card {
+  width: 150px;
+  text-align: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.doctor-card img {
+  border-radius: 50%;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+

@@ -1,0 +1,134 @@
+
+/* Hero Section */
+.hero {
+  background: url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3") no-repeat center/cover;
+  height: 1300px;
+   background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  padding: 40px;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.hero-content {
+  position: absolute;
+  text-align: center;
+  color: #d3d8dc;
+  max-width: 1200px;
+  z-index: 1;
+  
+}
+
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.hero .tagline {
+  font-size: 1.4rem;
+  font-style: italic;
+  margin-bottom: 30px;
+  color: #f0f0f0;
+}
+
+/* About Section */
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin: 40px 0;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.about-img {
+  flex: 1;
+}
+
+.about-img img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* Features */
+.hero-features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 50px 0;
+}
+
+.hero-features .feature {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.hero-features .feature:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.hero-features img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.hero-features h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.hero-features p {
+  font-size: 1rem;
+  color: #f1f1f1;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.stats .stat {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px 40px;
+  border-radius: 10px;
+  min-width: 180px;
+}
+
+.stats h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.stats p {
+  font-size: 1rem;
+  color: #e0e0e0;
+}

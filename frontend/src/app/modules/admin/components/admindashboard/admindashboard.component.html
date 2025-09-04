@@ -1,0 +1,41 @@
+<app-home-component></app-home-component>
+<h2>appointments</h2>
+<table class="appointments-table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Patient Name</th>
+      <th>Email</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Issue</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let appointment of appointments">
+      <td>{{ appointment.id }}</td>
+      <td>{{ appointment.patientName }}</td>
+      <td>{{ appointment.email }}</td>
+      <td>
+        <input type="date" [(ngModel)]="appointment.date" />
+      </td>
+      <td>
+        <input type="time" [(ngModel)]="appointment.time" />
+      </td>
+      <td>{{ appointment.description }}</td>
+      <td>{{ appointment.status }}</td>
+      <td>
+        <button (click)="updateStatus(appointment, 'accepted')">Accept</button>
+        <button (click)="updateStatus(appointment, 'rejected')">Reject</button>
+      </td>
+    </tr>
+    <tr *ngIf="appointments.length === 0">
+      <td colspan="8">No appointments found.</td>
+    </tr>
+  </tbody>
+</table>
+<app-footer></app-footer>
+
+
